@@ -1,7 +1,16 @@
-// import { LoginForm } from '@/components/organismos/LoginForm'
+import { LoginDesktopInfo } from '@/components/moleculas/LoginDesktopInfo'
+import { LoginForm } from '@/components/organismos/LoginForm'
 
 import { LoginWrapper } from './styles'
 
 export default function Login() {
-  return <LoginWrapper>{/* <LoginForm title="LOGAR" /> */}</LoginWrapper>
+  const location = useLocation()
+  console.log(location)
+
+  return (
+    <LoginWrapper>
+      <LoginForm title="title" />
+      <LoginDesktopInfo subtitle="Sua central de controle inteligente." title="Bem vindo de volta!" />
+    </LoginWrapper>
+  )
 }

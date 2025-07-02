@@ -1,5 +1,5 @@
-import Button from '@/components/Atomos/Button'
-import Input from '@/components/Atomos/Input'
+import Button from '@/components/atomos/Button'
+import Input from '@/components/atomos/Input'
 
 import email from '../../../assets/icons/email.svg'
 import password from '../../../assets/icons/password.svg'
@@ -18,7 +18,7 @@ export function LoginForm({ title }: LoginFormProps) {
       <h2>{title}</h2>
 
       <LoginFormForm>
-        <Input icon={email} variant="dark" type="email" autoComplete="username" placeholder="EMAIL" />
+        <Input autoFocus icon={email} variant="dark" type="email" autoComplete="username" placeholder="EMAIL" />
         <Input icon={password} variant="dark" type="password" autoComplete="current-password" placeholder="PASSWORD" />
         <div className="recuperar">
           <p>Esqueceu sua senha? </p>

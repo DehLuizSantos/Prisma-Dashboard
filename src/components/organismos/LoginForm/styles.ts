@@ -1,8 +1,13 @@
 import styled from '@emotion/styled'
 
 export const LoginFormWrapper = styled.div`
-  padding: 60px;
   text-align: center;
+  max-width: 292px;
+
+  @media (min-width: 800px) {
+    text-align: start;
+    padding: 0;
+  }
 
   h2 {
     color: ${(props) => props.theme.colors.green['500']};
@@ -15,6 +20,11 @@ export const LoginFormWrapper = styled.div`
     color: ${(props) => props.theme.colors.white};
     font-size: ${(props) => props.theme.fonts.small};
     margin-bottom: 30px;
+    width: 292px;
+
+    @media (min-width: 800px) {
+      width: 300px;
+    }
 
     span {
       font-weight: bold;

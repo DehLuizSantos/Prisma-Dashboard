@@ -14,6 +14,7 @@ export const InputWrapper = styled.div`
     background-color: transparent;
     border: 1px solid ${(props) => props.theme.colors.leaf};
     height: 45px;
+    width: 100%;
     min-width: 292px;
     border-radius: 5px;
     color: ${(props) => props.theme.colors.leaf};

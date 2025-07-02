@@ -1,14 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom'
 
+import { LoginTemplate } from '@/components/templates/LoginTemplate'
 import Login from '@/pages/Login'
 
 const router = createBrowserRouter(
   [
     {
       path: '',
+      element: <LoginTemplate />,
       children: [
         {
-          path: '',
+          path: '/',
           element: <Login />,
         },
       ],

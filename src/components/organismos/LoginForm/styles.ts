@@ -22,22 +22,19 @@ export const LoginFormWrapper = styled.div`
     margin-bottom: 30px;
     width: 292px;
 
-    @media (min-width: 800px) {
-      width: 300px;
-    }
-
     span {
       font-weight: bold;
       text-decoration: underline;
+      cursor: pointer;
     }
   }
 
   .mt-auto {
-    margin-top: 150px;
+    margin-top: auto;
   }
 `
 
 export const LoginFormForm = styled.form`
-  margin-top: 90px;
+  margin: 90px 0;
   text-align: start;
 `

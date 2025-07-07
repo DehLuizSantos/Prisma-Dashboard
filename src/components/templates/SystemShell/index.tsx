@@ -4,8 +4,9 @@ import dashboard from '../../../assets/icons/dashboard.svg'
 import modules from '../../../assets/icons/modules.svg'
 import products from '../../../assets/icons/products.svg'
 import users from '../../../assets/icons/users.svg'
+import Header from '../Header'
 import Sidebar from '../Sidebar'
-import { SystemShellWrapper } from './styles'
+import { ContainerShell, SystemShellWrapper } from './styles'
 
 export default function SystemShell() {
   const links = [
@@ -25,7 +26,7 @@ export default function SystemShell() {
       description: 'Produtos',
     },
     {
-      link: '/system/module',
+      link: '/system/modules',
       icon: modules,
       description: 'Modulos',
     },
@@ -34,10 +35,10 @@ export default function SystemShell() {
   return (
     <SystemShellWrapper>
       <Sidebar links={links} />
-      <div>
-        <header>exemplo</header>
+      <ContainerShell>
+        <Header links={links} />
         <Outlet />
-      </div>
+      </ContainerShell>
     </SystemShellWrapper>
   )
 }

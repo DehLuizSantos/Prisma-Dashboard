@@ -5,8 +5,6 @@ import { TooltipProps } from '.'
 export const TooltipWrapper = styled.div`
   position: relative;
   display: inline-block;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,8 +17,9 @@ export const TooltipBubble = styled.div<{
   padding: 6px 10px;
   background: ${(props) => props.theme.colors.white};
   border: 3px solid ${(props) => props.theme.colors.dark};
-  color: ${(props) => props.theme.colors.dark};
-  font-size: ${(props) => props.theme.fonts.large};
+  color: ${(props) => props.theme.colors.grey['500']};
+  font-size: ${(props) => props.theme.fonts.medium};
+  font-weight: bold;
   border-radius: 4px 10px 4px 15px;
   white-space: nowrap;
   pointer-events: none;

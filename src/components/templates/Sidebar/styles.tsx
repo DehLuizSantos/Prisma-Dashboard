@@ -20,7 +20,6 @@ export const SidebarWrapper = styled.aside`
     }
 
     .logout {
-      width: 100%;
       cursor: pointer;
       height: 100px;
       text-align: center;

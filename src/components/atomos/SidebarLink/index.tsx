@@ -16,6 +16,7 @@ export default function SidebarLink({ icon, active, description }: SidebarLinkPr
       <Tooltip content={description} position="right">
         <Icon svg={icon} fill={active ? theme.colors.dark : theme.colors.white} />
       </Tooltip>
+      <p>{description}</p>
     </SidebarLinkWrapper>
   )
 }

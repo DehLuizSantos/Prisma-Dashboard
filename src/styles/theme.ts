@@ -25,6 +25,11 @@ declare module '@emotion/react' {
       xxlarge: string
       xxxlarge: string
     }
+    responsive: {
+      laptop: string
+      mobile: string
+      desktop: string
+    }
   }
 }
 
@@ -53,5 +58,10 @@ export const theme = {
     xlarge: '22px',
     xxlarge: '28px',
     xxxlarge: '36px',
+  },
+  responsive: {
+    laptop: '800px',
+    mobile: '420px',
+    desktop: '1400px',
   },
 }

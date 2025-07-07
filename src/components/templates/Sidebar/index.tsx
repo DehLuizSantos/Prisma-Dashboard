@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom'
+
+import Icon from '@/components/atomos/Icon'
 import SidebarLink from '@/components/atomos/SidebarLink'
+import Tooltip from '@/components/atomos/ToolTip'
 
 import logout from '../../../assets/icons/Logout.svg'
 import logo from '../../../assets/LogoPrisma.svg'
@@ -14,16 +18,22 @@ type SidebarProps = {
 
 export default function Sidebar({ links }: SidebarProps) {
   const location = useLocation()
-  console.log(location)
+  const [active, setActive] = useState(String(location.pathname))
   return (
     <SidebarWrapper>
-      <img src={logo} alt="Prisma analitcs" />
       <div className="links">
-        {links.map((link, index) => (
-          <SidebarLink active={link.link === '/dashboard'} {...link} key={index} />
+        <img src={logo} alt="Prisma analitcs" />
+        {links.map((link) => (
+          <Link key={link.link} to={link.link} onClick={() => setActive(link.link)}>
+            <SidebarLink active={link.link === active} {...link} />
+          </Link>
         ))}
       </div>
-      <img src={logout} alt="Sair" className="end" />
+      <div className="logout">
+        <Tooltip position="right" content="Logout">
+          <Icon width={47} height={47} svg={logout} className="end" />
+        </Tooltip>
+      </div>
     </SidebarWrapper>
   )
 }

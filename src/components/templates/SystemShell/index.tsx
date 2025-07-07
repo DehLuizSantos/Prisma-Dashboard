@@ -10,24 +10,24 @@ import { SystemShellWrapper } from './styles'
 export default function SystemShell() {
   const links = [
     {
-      link: '/dashboard',
+      link: '/system/dashboard',
       icon: dashboard,
-      description: 'Dashboard mostrando os dados',
+      description: 'Dashboard',
     },
     {
-      link: '/users',
+      link: '/system/users',
       icon: users,
-      description: 'Dashboard mostrando os dados',
+      description: 'Usuários',
     },
     {
-      link: '/product',
+      link: '/system/product',
       icon: products,
-      description: 'Dashboard mostrando os dados',
+      description: 'Produtos',
     },
     {
-      link: '/module',
+      link: '/system/module',
       icon: modules,
-      description: 'Dashboard mostrando os dados',
+      description: 'Modulos',
     },
   ]
 

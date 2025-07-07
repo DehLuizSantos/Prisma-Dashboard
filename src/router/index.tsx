@@ -35,6 +35,18 @@ const router = createBrowserRouter(
           path: '/system/dashboard',
           element: <Dashboard />,
         },
+        {
+          path: '/system/users',
+          element: <Dashboard />,
+        },
+        {
+          path: '/system/product',
+          element: <Dashboard />,
+        },
+        {
+          path: '/system/module',
+          element: <Dashboard />,
+        },
       ],
     },
   ],

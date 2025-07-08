@@ -35,6 +35,6 @@ export const LoginFormWrapper = styled.div`
 `
 
 export const LoginFormForm = styled.form`
-  margin: 90px 0;
+  margin: 30px 0;
   text-align: start;
 `

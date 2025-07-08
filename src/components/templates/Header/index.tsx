@@ -1,16 +1,16 @@
-import { AnimatePresence } from 'framer-motion'
-import { Link } from 'react-router-dom'
-
 import Icon from '@/components/atomos/Icon'
-import SidebarLink from '@/components/atomos/SidebarLink'
+import IconMenu from '@/components/moleculas/Menu'
+import MenuMobile from '@/components/moleculas/MenuMobile'
 import { theme } from '@/styles/theme'
 
+import trocar from '../../../assets/icons/change.svg'
+import logout from '../../../assets/icons/Logout.svg'
 import closed from '../../../assets/icons/menu-closed.svg'
 import opened from '../../../assets/icons/menu-opened.svg'
+import modulo from '../../../assets/icons/modules.svg'
 import setaBaixo from '../../../assets/icons/setaBaixo.svg'
 import user from '../../../assets/icons/user (3).svg'
-import logo from '../../../assets/LogoPrisma.svg'
-import { Backdrop, HeaderTitle, HeaderUser, HeaderWrapper, MenuContainer } from './styles'
+import { HeaderTitle, HeaderUser, HeaderWrapper } from './styles'
 
 type HeaderProps = {
   links: {
@@ -21,8 +21,6 @@ type HeaderProps = {
 }
 
 export default function Header({ links }: HeaderProps) {
-  const [active, setActive] = useState(String(location.pathname))
-
   const empresa = 'Ronron shop'
   const name = 'André'
   const [openMenuMobile, setOpenMenuMobile] = useState(false)
@@ -44,35 +42,29 @@ export default function Header({ links }: HeaderProps) {
         </div>
         <div className="menu-user">
           <Icon svg={user} fill={theme.colors.dark} width={30} height={30} />
-          <Icon svg={setaBaixo} fill={theme.colors.dark} width={12} height={7} />
+          <IconMenu
+            icon={<Icon svg={setaBaixo} fill={theme.colors.dark} width={12} height={7} />}
+            items={[
+              {
+                label: 'Trocar de senha',
+                icon: <Icon svg={trocar} fill={theme.colors.dark} width={20} height={14} />,
+                onClick: () => console.log('Perfil'),
+              },
+              {
+                label: 'Trocar de modulo',
+                icon: <Icon svg={modulo} fill={theme.colors.dark} width={18} height={18} />,
+                onClick: () => console.log('Perfil'),
+              },
+              {
+                label: 'Sair',
+                icon: <Icon svg={logout} fill={theme.colors.dark} width={47} height={47} />,
+                onClick: () => console.log('Sair'),
+              },
+            ]}
+          />
         </div>
       </HeaderUser>
-      <AnimatePresence>
-        {openMenuMobile ? (
-          <Backdrop initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <MenuContainer
-              initial={{ x: '-100%', opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: '-100%', opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img src={logo} alt="Prisma Analitcs" />
-              {links.map((link) => (
-                <Link
-                  key={link.link}
-                  to={link.link}
-                  onClick={() => {
-                    setOpenMenuMobile(false)
-                    setActive(link.link)
-                  }}
-                >
-                  <SidebarLink active={link.link === active} {...link} />
-                </Link>
-              ))}
-            </MenuContainer>
-          </Backdrop>
-        ) : null}
-      </AnimatePresence>
+      <MenuMobile links={links} openMenuMobile={openMenuMobile} setOpenMenuMobile={setOpenMenuMobile} />
     </HeaderWrapper>
   )
 }

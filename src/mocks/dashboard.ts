@@ -4,10 +4,8 @@ export const dashboardMock = {
   totalInvested: 8450.0,
   totalRevenue: 15800.0,
   totalCampaignNumber: mockCampaign.length,
-  roi: 87.57, // (15800 - 8450) / 8450 * 100
-
-  recentCampaigns: mockCampaign.slice(0, 4),
-
+  roi: 87.57,
+  recentCampaigns: mockCampaign,
   revenueByChannel: [
     { name: 'Google Ads', value: 6800 },
     { name: 'Meta Ads', value: 5400 },

@@ -14,6 +14,11 @@ declare module '@emotion/react' {
       }
       red: {
         300: string
+        100: string
+      }
+      blue: {
+        300: string
+        500: string
       }
     }
     fonts: {
@@ -48,6 +53,11 @@ export const theme = {
     },
     red: {
       300: '#933032',
+      100: '#EB998E',
+    },
+    blue: {
+      300: '#8EE4EB',
+      500: '#3D2FB8',
     },
   },
   fonts: {

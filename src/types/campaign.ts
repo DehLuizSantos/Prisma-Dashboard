@@ -7,7 +7,7 @@ export type GenderTarget = 'all' | 'male' | 'female'
 export type Campaign = {
   id: string
   name: string
-  platform: CampaignPlatform
+  platform: CampaignPlatform | string
   objective: CampaignObjective
   status: CampaignStatus
   dailyBudget: number

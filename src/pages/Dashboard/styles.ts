@@ -4,6 +4,7 @@ import { theme } from '@/styles/theme'
 
 export const DashboardContainer = styled.div`
   padding: 30px;
+  max-width: 1200px;
 
   @media (min-width: ${(props) => props.theme.responsive.laptop}) {
     padding: 0;
@@ -12,7 +13,7 @@ export const DashboardContainer = styled.div`
   h2 {
     color: ${theme.colors.grey['300']};
     font-weight: bold;
-    font-size: ${(props) => props.theme.fonts.medium};
+    font-size: ${(props) => props.theme.fonts.xxlarge};
     margin-top: 0;
 
     @media (min-width: ${(props) => props.theme.responsive.laptop}) {

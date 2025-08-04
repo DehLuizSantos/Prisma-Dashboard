@@ -3,9 +3,9 @@ import React, { useRef, useState } from 'react'
 
 import { MenuButton, MenuItemStyled, MenuList, MenuWrapper } from './styles'
 
-type MenuItem = {
+export type MenuItem = {
   label: string
-  icon: React.ReactNode
+  icon?: React.ReactNode
   onClick: () => void
 }
 

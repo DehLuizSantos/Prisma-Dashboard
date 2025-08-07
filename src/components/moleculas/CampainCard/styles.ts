@@ -8,6 +8,13 @@ export const CampainCardWrapper = styled.div`
   background-color: ${(props) => props.theme.colors.green['300']};
   width: 100%;
   margin: 30px 0;
+  position: relative;
+  transition: 0.5s;
+
+  &:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 10px black;
+  }
 
   @media (min-width: ${(props) => props.theme.responsive.laptop}) {
     width: 375px;
@@ -31,6 +38,17 @@ export const CampainCardWrapper = styled.div`
       text-align: center;
       padding: 2px 10px;
     }
+  }
+
+  .aside {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .link-campaingn {
+    color: ${(props) => props.theme.colors.white};
+    text-decoration: underline;
   }
 `
 

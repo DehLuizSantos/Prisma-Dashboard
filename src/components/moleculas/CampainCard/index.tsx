@@ -1,3 +1,9 @@
+import { Link } from 'react-router-dom'
+
+import { Pause } from '@/assets/icons/pause'
+import { Play } from '@/assets/icons/play'
+import { IconButton } from '@/components/atomos/IconButton'
+import { theme } from '@/styles/theme'
 import { Campaign } from '@/types/campaign'
 import { formatPtBrCurrency } from '@/utils/format'
 import { formatStatus } from '@/utils/functions'
@@ -6,7 +12,15 @@ import { CampainCardWrapper, CampainContent } from './styles'
 
 type CampainCardProps = Pick<
   Campaign,
-  'name' | 'platform' | 'totalBudget' | 'conversionTracking' | 'status' | 'objective' | 'analytics' | 'dailyBudget'
+  | 'name'
+  | 'platform'
+  | 'totalBudget'
+  | 'conversionTracking'
+  | 'status'
+  | 'objective'
+  | 'analytics'
+  | 'dailyBudget'
+  | 'id'
 >
 export function CampainCard({
   name,
@@ -14,10 +28,46 @@ export function CampainCard({
   platform,
   objective,
   totalBudget,
+  id,
   analytics,
   dailyBudget,
 }: CampainCardProps) {
   console.log(platform)
+
+  const campainInfosContent = [
+    {
+      label: 'Canal',
+      value: platform,
+    },
+    {
+      label: 'Tipo de campanha',
+      value: objective,
+    },
+    {
+      label: 'Investimento total (R$)',
+      value: formatPtBrCurrency(totalBudget),
+    },
+    {
+      label: 'Investimento diário (R$)',
+      value: formatPtBrCurrency(dailyBudget),
+    },
+    {
+      label: 'Clicks (CRT)',
+      value: analytics.clicks,
+    },
+    {
+      label: 'Taxa por clique',
+      value: formatPtBrCurrency(analytics.cpc),
+    },
+    {
+      label: 'Conversões',
+      value: analytics.conversions,
+    },
+    {
+      label: 'Custo por resultado (CPR)',
+      value: formatPtBrCurrency(analytics.conversions),
+    },
+  ]
   return (
     <CampainCardWrapper>
       <div className="header">
@@ -30,39 +80,23 @@ export function CampainCard({
         </span>
       </div>
       <CampainContent>
-        <div className="chanel">
-          <span className="label">Canal:</span>
-          <span className="value"> {platform}</span>
-        </div>
-        <div className="chanel">
-          <span className="label">Tipo de campanha:</span>
-          <span className="value"> {objective}</span>
-        </div>
-        <div className="chanel">
-          <span className="label">Investimento total (R$):</span>
-          <span className="value"> {formatPtBrCurrency(totalBudget)}</span>
-        </div>
-        <div className="chanel">
-          <span className="label">Investimento diário (R$):</span>
-          <span className="value"> {formatPtBrCurrency(dailyBudget)}</span>
-        </div>
-        <div className="chanel">
-          <span className="label">Clicks (CRT):</span>
-          <span className="value"> {analytics.clicks}</span>
-        </div>
-        <div className="chanel">
-          <span className="label">Taxa de cliques :</span>
-          <span className="value"> {formatPtBrCurrency(analytics.cpc)}</span>
-        </div>
-        <div className="chanel">
-          <span className="label">Conversões :</span>
-          <span className="value"> {analytics.conversions}</span>
-        </div>
-        <div className="chanel">
-          <span className="label">Custo por resultado (CPR):</span>
-          <span className="value"> {formatPtBrCurrency(analytics.conversions)}</span>
-        </div>
+        {campainInfosContent.map((info) => (
+          <div className="chanel" key={info.label}>
+            <span className="label">{info.label}:</span>
+            <span className="value"> {info.value}</span>
+          </div>
+        ))}
       </CampainContent>
+      <Link className="link-campaingn" to={`/system/campanhas/${id}`}>
+        Ver mais informações
+      </Link>
+      <div className="aside">
+        <IconButton
+          onClick={() => console.log('aqui')}
+          style={{ background: status === 'active' ? theme.colors.red['100'] : theme.colors.green['500'] }}
+          icon={status === 'active' ? <Pause /> : <Play />}
+        />
+      </div>
     </CampainCardWrapper>
   )
 }

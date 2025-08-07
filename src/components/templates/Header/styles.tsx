@@ -5,8 +5,10 @@ export const HeaderWrapper = styled.header`
   flex-direction: column-reverse;
   border-bottom: 3px solid ${(props) => props.theme.colors.dark};
   background-color: ${(props) => props.theme.colors.white};
+  max-width: 1700px;
 
   @media (min-width: ${(props) => props.theme.responsive.laptop}) {
+    width: calc(100% - 60px);
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -5,7 +5,8 @@ export const SidebarWrapper = styled.aside`
 
   @media (min-width: ${(props) => props.theme.responsive.laptop}) {
     width: 120px;
-    height: 100%;
+    position: fixed;
+    height: calc(100% - 60px);
     border-radius: 12px;
     background-color: ${(props) => props.theme.colors.dark};
     text-align: center;

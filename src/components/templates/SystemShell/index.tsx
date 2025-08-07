@@ -36,8 +36,10 @@ export default function SystemShell() {
     <SystemShellWrapper>
       <Sidebar links={links} />
       <ContainerShell>
-        <Header links={links} />
-        <Outlet />
+        <div className="container">
+          <Header links={links} />
+          <Outlet />
+        </div>
       </ContainerShell>
     </SystemShellWrapper>
   )

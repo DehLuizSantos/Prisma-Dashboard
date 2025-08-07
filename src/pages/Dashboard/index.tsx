@@ -1,6 +1,24 @@
-export default function Dashboard() {
-  const location = useLocation()
-  console.log(location)
+import { CardsCampain } from '@/components/organismos/CardsCampain'
+import { CardDashboardHeader } from '@/components/organismos/CardsDashboarHeader'
+import { mockCampaign } from '@/mocks/campaign'
+import { dashboardMock } from '@/mocks/dashboard'
 
-  return <>Dashboard</>
+import { DashboardContainer } from './styles'
+
+export default function Dashboard() {
+  console.log(dashboardMock)
+
+  return (
+    <DashboardContainer>
+      <h2>Dashboard</h2>
+      <CardDashboardHeader
+        totalCampaignNumber={dashboardMock.totalCampaignNumber}
+        roi={dashboardMock.roi}
+        totalInvested={dashboardMock.totalInvested}
+        totalRevenue={dashboardMock.totalRevenue}
+      />
+
+      <CardsCampain campains={mockCampaign.slice(0, 3)} />
+    </DashboardContainer>
+  )
 }

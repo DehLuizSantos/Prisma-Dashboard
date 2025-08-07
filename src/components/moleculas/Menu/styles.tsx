@@ -10,7 +10,7 @@ export const MenuButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  /* padding: 8px; */
   display: flex;
   align-items: center;
   justify-content: center;

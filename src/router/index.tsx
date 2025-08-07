@@ -4,6 +4,7 @@ import LoginTemplate from '@/components/templates/LoginTemplate'
 import SystemShell from '@/components/templates/SystemShell'
 import Dashboard from '@/pages/Dashboard'
 import Login from '@/pages/Login'
+import Modulos from '@/pages/Modules'
 import Register from '@/pages/Register'
 import ResetPassword from '@/pages/ResetPassoword'
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter(
         {
           path: '/recuperar',
           element: <ResetPassword />,
+        },
+        {
+          path: '/modulos',
+          element: <Modulos />,
         },
       ],
     },

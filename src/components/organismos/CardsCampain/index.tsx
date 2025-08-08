@@ -13,6 +13,7 @@ export function CardsCampain({ campains }: CardsCampainProps) {
       <div className="campains">
         {campains.map((campain) => (
           <CampainCard
+            id={campain.id}
             key={campain.id}
             analytics={campain.analytics}
             conversionTracking={campain.conversionTracking}

@@ -80,6 +80,20 @@ export const dashboardMock = {
       TikTok: 500,
     },
   ],
+  returnInvestiment: [
+    { mes: 'Jan', investimento: 5000, retorno: 7500, roi: 50 }, // ROI = ((7500-5000)/5000)*100
+    { mes: 'Feb', investimento: 5200, retorno: 6800, roi: 30.77 },
+    { mes: 'Mar', investimento: 4800, retorno: 7200, roi: 50 },
+    { mes: 'Apr', investimento: 6000, retorno: 9000, roi: 50 },
+    { mes: 'May', investimento: 6500, retorno: 8700, roi: 33.85 },
+    { mes: 'Jun', investimento: 7000, retorno: 9500, roi: 35.71 },
+    { mes: 'Jul', investimento: 6800, retorno: 10200, roi: 50 },
+    { mes: 'Aug', investimento: 7200, retorno: 11000, roi: 52.78 },
+    { mes: 'Sep', investimento: 7500, retorno: 9800, roi: 30.67 },
+    { mes: 'Oct', investimento: 8000, retorno: 12500, roi: 56.25 },
+    { mes: 'Nov', investimento: 8500, retorno: 14000, roi: 64.71 },
+    { mes: 'Dec', investimento: 9000, retorno: 15000, roi: 66.67 },
+  ],
   revenueByChannel: [
     { name: 'Google Ads', value: 6800 },
     { name: 'Meta Ads', value: 5400 },
@@ -87,15 +101,15 @@ export const dashboardMock = {
   ],
 
   campaignsPerChannel: [
-    { name: 'Google Ads', total: 4 },
-    { name: 'Meta Ads', total: 3 },
-    { name: 'TikTok Ads', total: 2 },
+    { name: 'Google Ads', value: 4 },
+    { name: 'Meta Ads', value: 3 },
+    { name: 'TikTok Ads', value: 2 },
   ],
 
   topRoiCampaigns: [
-    { name: 'Campanha Dia das Mães', roi: 122.5 },
-    { name: 'Campanha Inverno TikTok', roi: 93.0 },
-    { name: 'Campanha Verão Google', roi: 75.4 },
+    { name: 'Campanha Dia das Mães', value: 122.5 },
+    { name: 'Campanha Inverno TikTok', value: 93.0 },
+    { name: 'Campanha Verão Google', value: 75.4 },
   ],
 
   pieByObjective: [

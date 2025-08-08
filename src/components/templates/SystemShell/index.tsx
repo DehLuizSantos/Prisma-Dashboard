@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom'
 
+import campaing from '../../../assets/icons/campaing.svg'
 import dashboard from '../../../assets/icons/dashboard.svg'
-import modules from '../../../assets/icons/modules.svg'
-import products from '../../../assets/icons/products.svg'
+import integracoes from '../../../assets/icons/modules.svg'
 import users from '../../../assets/icons/users.svg'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
@@ -21,14 +21,14 @@ export default function SystemShell() {
       description: 'Usuários',
     },
     {
-      link: '/system/product',
-      icon: products,
-      description: 'Produtos',
+      link: '/system/campaing',
+      icon: campaing,
+      description: 'Campanha',
     },
     {
-      link: '/system/modules',
-      icon: modules,
-      description: 'Modulos',
+      link: '/system/integrations',
+      icon: integracoes,
+      description: 'Integrações',
     },
   ]
 

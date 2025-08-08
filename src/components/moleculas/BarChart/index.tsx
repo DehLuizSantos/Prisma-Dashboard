@@ -6,7 +6,7 @@ import { theme } from '@/styles/theme'
 import IconMenu, { MenuItem } from '../Menu'
 import { BarChartContainer, BarChartHeader } from './styles'
 
-type ChartAreaInteractiveProps = {
+type AreaChartInteractiveProps = {
   data: {
     name: string
     Meta: number
@@ -14,7 +14,7 @@ type ChartAreaInteractiveProps = {
     TikTok: number
   }[]
 }
-export function ChartAreaInteractive({ data }: ChartAreaInteractiveProps) {
+export function AreaChartInteractive({ data }: AreaChartInteractiveProps) {
   const [menuOption, setMenuOption] = useState({ value: 6, label: 'Seis meses' })
 
   const filteredData = data.slice(0, menuOption.value)

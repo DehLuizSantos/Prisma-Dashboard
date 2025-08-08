@@ -15,38 +15,40 @@ type ChartAreaInteractiveProps = {
   }[]
 }
 export function ChartAreaInteractive({ data }: ChartAreaInteractiveProps) {
-  const [menuOption, setMenuOption] = useState('Seis meses')
+  const [menuOption, setMenuOption] = useState({ value: 6, label: 'Seis meses' })
+
+  const filteredData = data.slice(0, menuOption.value)
 
   const items: MenuItem[] = [
     {
-      label: 'Semana',
-      onClick: () => setMenuOption('Semana'),
+      label: 'Mês',
+      onClick: () => setMenuOption({ label: 'Mês', value: 1 }),
     },
     {
-      label: 'Mês',
-      onClick: () => setMenuOption('Mês'),
+      label: 'Três meses',
+      onClick: () => setMenuOption({ label: 'Três meses', value: 3 }),
     },
     {
       label: 'Seis meses',
-      onClick: () => setMenuOption('Seis meses'),
+      onClick: () => setMenuOption({ label: 'Seis meses', value: 6 }),
     },
 
     {
       label: 'Ano',
-      onClick: () => setMenuOption('Ano'),
+      onClick: () => setMenuOption({ label: 'Ano', value: 12 }),
     },
   ]
 
   return (
     <BarChartContainer>
       <BarChartHeader>
-        <h2>Número de conversões por canal ({menuOption})</h2>
+        <h2>Número de conversões por canal ({menuOption.label})</h2>
 
         <IconMenu icon={<TreeDots />} items={items!} />
       </BarChartHeader>
 
       <ResponsiveContainer width="100%" height="95%">
-        <BarChart width={500} height={100} data={data}>
+        <BarChart width={500} height={100} data={filteredData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />

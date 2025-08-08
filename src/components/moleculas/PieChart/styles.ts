@@ -1,16 +1,15 @@
 import styled from '@emotion/styled'
 
-export const BarChartContainer = styled.div`
+export const PieChartContainer = styled.div`
   border-radius: 8px 12px 12px 8px;
   border: 4px solid ${(props) => props.theme.colors.dark};
   padding: 30px;
   box-shadow: 10px 10px 4px ${(props) => props.theme.colors.green['300']};
+  height: 400px;
   width: 100%;
-  height: 480px;
-  max-width: 1400px;
 `
 
-export const BarChartHeader = styled.div`
+export const PieChartHeader = styled.div`
   display: flex;
   align-items: start;
   justify-content: space-between;

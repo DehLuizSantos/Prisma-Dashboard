@@ -19,7 +19,7 @@ export default function Dashboard() {
         totalRevenue={dashboardMock.totalRevenue}
       />
 
-      <DashboardCharts data={dashboardMock.convertionsPerChannel} />
+      <DashboardCharts dataArea={dashboardMock.convertionsPerChannel} DataPie={dashboardMock.campaignsPerChannel} />
       <CardsCampain campains={mockCampaign.slice(0, 3)} />
     </DashboardContainer>
   )

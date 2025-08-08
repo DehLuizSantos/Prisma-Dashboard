@@ -32,8 +32,6 @@ export function CampainCard({
   analytics,
   dailyBudget,
 }: CampainCardProps) {
-  console.log(platform)
-
   const campainInfosContent = [
     {
       label: 'Canal',

@@ -1,21 +1,29 @@
 import { ChartAreaInteractive } from '@/components/moleculas/BarChart'
+import { PieChartInteractive } from '@/components/moleculas/PieChart'
 
 import { DashboardChartsWrapper } from './styles'
 
 type DashboardChartsProps = {
-  data: {
+  dataArea: {
     name: string
     Meta: number
     Google: number
     TikTok: number
   }[]
+  DataPie: {
+    name: string
+    total: number
+  }[]
 }
 
-export function DashboardCharts({ data }: DashboardChartsProps) {
-  console.log(data)
+export function DashboardCharts({ dataArea, DataPie }: DashboardChartsProps) {
   return (
     <DashboardChartsWrapper>
-      <ChartAreaInteractive data={data} />
+      <ChartAreaInteractive data={dataArea} />
+      <div className="flex">
+        <PieChartInteractive data={DataPie} />
+        <PieChartInteractive data={DataPie} />
+      </div>
     </DashboardChartsWrapper>
   )
 }

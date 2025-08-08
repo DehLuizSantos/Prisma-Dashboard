@@ -1,6 +1,5 @@
-import { CardsCampain } from '@/components/organismos/CardsCampain'
 import { CardDashboardHeader } from '@/components/organismos/CardsDashboarHeader'
-import { mockCampaign } from '@/mocks/campaign'
+import { DashboardCharts } from '@/components/organismos/DashboardCharts'
 import { dashboardMock } from '@/mocks/dashboard'
 
 import { DashboardContainer } from './styles'
@@ -18,7 +17,14 @@ export default function Dashboard() {
         totalRevenue={dashboardMock.totalRevenue}
       />
 
-      <CardsCampain campains={mockCampaign.slice(0, 3)} />
+      <DashboardCharts
+        returnInvestiment={dashboardMock.returnInvestiment}
+        dataArea={dashboardMock.convertionsPerChannel}
+        campaignsPerChannel={dashboardMock.campaignsPerChannel}
+        pieByObjective={dashboardMock.pieByObjective}
+        revenueByChannel={dashboardMock.revenueByChannel}
+        topRoiCampaigns={dashboardMock.topRoiCampaigns}
+      />
     </DashboardContainer>
   )
 }

@@ -12,7 +12,6 @@ export const CardsCampainContainer = styled.div`
 
     @media (min-width: ${(props) => props.theme.responsive.laptop}) {
       display: flex;
-      justify-content: space-between;
       gap: 30px;
       flex-wrap: wrap;
       align-items: start;

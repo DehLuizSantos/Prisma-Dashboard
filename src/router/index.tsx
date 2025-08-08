@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import LoginTemplate from '@/components/templates/LoginTemplate'
 import SystemShell from '@/components/templates/SystemShell'
+import Campanhas from '@/pages/Campanhas'
 import Dashboard from '@/pages/Dashboard'
 import Login from '@/pages/Login'
 import Modulos from '@/pages/Modules'
@@ -45,11 +46,11 @@ const router = createBrowserRouter(
           element: <Dashboard />,
         },
         {
-          path: '/system/product',
-          element: <Dashboard />,
+          path: '/system/campaing',
+          element: <Campanhas />,
         },
         {
-          path: '/system/modules',
+          path: '/system/integrations',
           element: <Dashboard />,
         },
       ],

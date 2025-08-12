@@ -44,7 +44,7 @@ export default ({ command, mode }: ConfigEnv) => {
       },
     },
     build: {
-      outDir: mode === 'docker' ? 'dist' : 'docs',
+      outDir: /* mode === 'docker' ? 'dist' : */ 'docs',
       sourcemap: mode != 'production',
       rollupOptions: {
         output: {

@@ -1,16 +1,36 @@
-export type UserRole = 'individual' | 'agency'
-export type PermissionLevel = 'admin' | 'editor' | 'viewer'
+export type UserRole = 'manager' | 'client' | 'guest'
+
+export type UserLogAction = 'POST' | 'PUT' | 'DELETE'
+
+export type UserLog = {
+  timestamp: string // ISO date
+  action: UserLogAction
+  route: string
+}
+
+export type IntegrationPlatform = 'meta' | 'google'
+
+export type Integration = {
+  platform: IntegrationPlatform
+  accountId: string
+  accountName: string
+  connectedAt: string // ISO date
+}
+
+// Tipagens que você já definiu
+export type CampaignPlatform = 'google' | 'meta' | 'tiktok'
+export type CampaignObjective = 'traffic' | 'conversions' | 'leads' | 'awareness'
+export type CampaignStatus = 'active' | 'paused' | 'finished'
+export type CreativeType = 'image' | 'video' | 'carousel'
+export type GenderTarget = 'all' | 'male' | 'female'
 
 export type User = {
-  id: string
+  id: number
   name: string
   email: string
-  passwordHash: string
-  role: UserRole // 'individual' | 'agency'
-  isPremium: boolean
-  agencyId?: string // Preenchido se for um cliente de agência
-  permissions?: PermissionLevel // Define o nível de acesso se for cliente de uma agência
-  clients: User[] | null // Apenas 'agency' tem clients, senão é null
+  role: UserRole
+  logs: UserLog[]
+  integrations: Integration[]
   createdAt: string
   updatedAt: string
 }

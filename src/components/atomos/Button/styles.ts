@@ -9,5 +9,10 @@ export const ButtonWrapper = styled.div`
     color: ${(props) => props.theme.colors.white};
     font-weight: bold;
     border-radius: 5px;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 2px 2px 4px ${(props) => props.theme.colors.grey['500']};
+    }
   }
 `

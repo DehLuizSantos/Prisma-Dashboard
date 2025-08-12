@@ -8,6 +8,7 @@ import Login from '@/pages/Login'
 import Modulos from '@/pages/Modules'
 import Register from '@/pages/Register'
 import ResetPassword from '@/pages/ResetPassoword'
+import Usuarios from '@/pages/Usuarios'
 
 const router = createBrowserRouter(
   [
@@ -43,7 +44,7 @@ const router = createBrowserRouter(
         },
         {
           path: '/system/users',
-          element: <Dashboard />,
+          element: <Usuarios />,
         },
         {
           path: '/system/campaing',

@@ -3,11 +3,11 @@ import styled from '@emotion/styled'
 export const TableWrapper = styled.div`
   overflow-x: auto;
   margin: 30px;
-  box-shadow: 10px 10px 4px ${(props) => props.theme.colors.green['300']};
-  border: 3px solid ${(props) => props.theme.colors.dark};
+  border: 2px solid ${(props) => props.theme.colors.dark};
   border-radius: 8px;
+  width: 90%;
   max-width: 1400px;
-  padding: 15px;
+  /* padding: 15px; */
 
   @media (min-width: ${(props) => props.theme.responsive.laptop}) {
     margin: 30px 0;

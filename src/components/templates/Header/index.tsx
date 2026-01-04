@@ -21,15 +21,11 @@ type HeaderProps = {
 }
 
 export default function Header({ links }: HeaderProps) {
-  const empresa = 'Ronron shop'
   const name = 'André'
   const [openMenuMobile, setOpenMenuMobile] = useState(false)
   return (
     <HeaderWrapper>
-      <HeaderTitle>
-        <h2>Você está na:</h2>
-        <h3>{empresa}</h3>
-      </HeaderTitle>
+      <HeaderTitle></HeaderTitle>
       <HeaderUser>
         <div className="menu-mobile">
           <Icon

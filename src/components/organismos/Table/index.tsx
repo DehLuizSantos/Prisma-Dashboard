@@ -1,14 +1,12 @@
 import { LogsUser } from '@/assets/icons/LogsUser'
 import { Pencil } from '@/assets/icons/pencil'
 import { Trash } from '@/assets/icons/trash'
-import Button from '@/components/atomos/Button'
 import { IconButton } from '@/components/atomos/IconButton'
-import SearchInput from '@/components/atomos/SearchInput'
 import Tooltip from '@/components/atomos/ToolTip'
 import { Pagination } from '@/components/moleculas/Pagination'
 import { theme } from '@/styles/theme'
 
-import { TableContainer, TableFiltersHeader, TableTd, TableWrapper } from './styles'
+import { TableContainer, TableTd, TableWrapper } from './styles'
 
 export type Header<T> = {
   key: keyof T
@@ -42,14 +40,6 @@ export default function TableCustomized<T extends { [key: string]: any }>({
 
   return (
     <TableWrapper>
-      <TableFiltersHeader>
-        <div className="">
-          <SearchInput />
-        </div>
-        <Button variant="primary" color={theme.colors.green['300']}>
-          Adicionar
-        </Button>
-      </TableFiltersHeader>
       {rows!.length === 0 ? (
         <div className="no-data-table-wrapper">
           <p>Não há dados disponíveis</p>

@@ -61,6 +61,7 @@ export const HeaderUser = styled.div`
 
   .menu-user {
     display: flex;
+
     align-items: center;
     gap: 7px;
   }

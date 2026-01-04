@@ -8,8 +8,8 @@ export default function Usuarios() {
   const [pagination, setPagination] = useState(1)
   console.log(usersMock)
   const headers: Header<User>[] = [
-    { key: 'email', label: 'Email' },
     { key: 'name', label: 'Nome' },
+    { key: 'email', label: 'Email' },
     { key: 'role', label: 'Tipo' },
     { key: 'updatedAt', label: 'Última att' },
   ]

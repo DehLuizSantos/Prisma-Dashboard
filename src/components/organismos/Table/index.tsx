@@ -1,4 +1,4 @@
-import { LogsUser } from '@/assets/icons/LogsUser'
+import { LogsUser } from '@/assets/icons/Logs'
 import { Pencil } from '@/assets/icons/pencil'
 import { Trash } from '@/assets/icons/trash'
 import Button from '@/components/atomos/Button'
@@ -80,21 +80,21 @@ export default function TableCustomized<T extends { [key: string]: any }>({
                         {onEdit && (
                           <Tooltip position="top" content="Editar">
                             <IconButton
-                              icon={<Pencil width={20} height={20} fill={theme.colors.blue['500']} />}
+                              icon={<Pencil width={30} height={30} fill={theme.colors.blue['500']} />}
                             ></IconButton>
                           </Tooltip>
                         )}
                         {onDelete && (
                           <Tooltip position="top" content="Deletar">
                             <IconButton
-                              icon={<Trash width={20} height={20} fill={theme.colors.red['300']} />}
+                              icon={<Trash width={30} height={30} fill={theme.colors.red['300']} />}
                             ></IconButton>
                           </Tooltip>
                         )}
                         {onLogs && (
                           <Tooltip position="top" content="Ver logs">
                             <IconButton
-                              icon={<LogsUser width={20} height={20} fill={theme.colors.green['500']} />}
+                              icon={<LogsUser width={30} height={30} fill={theme.colors.green['500']} />}
                             ></IconButton>
                           </Tooltip>
                         )}

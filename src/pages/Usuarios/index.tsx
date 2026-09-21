@@ -1,3 +1,4 @@
+import PageHeader from '@/components/organismos/PageHeader'
 import Table, { Header } from '@/components/organismos/Table'
 import { usersMock } from '@/mocks/users'
 import { User } from '@/types/user'
@@ -16,7 +17,7 @@ export default function Usuarios() {
   return (
     <UsuariosWrapper>
       <h2>Usuários</h2>
-
+      <PageHeader />
       <Table
         headers={headers}
         totalData={usersMock.length}
